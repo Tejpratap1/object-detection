@@ -1,0 +1,70 @@
+using System;
+usingSystem.Collections.Generic;
+usingSystem.Linq;
+usingSystem.Text;
+namespace Leela64
+{
+publicclassAddition
+    {
+publicint add(int x, int y)
+        {
+return (x + y);
+        }
+    }
+publicclassSubtraction
+    {
+publicint sub(int x, int y)
+        {
+return (x - y);
+        }
+    }
+publicclassDivision
+    {
+publicint div(int x, int y)
+        {
+return (x / y);
+        }
+    }
+
+publicclassMultiplication
+    {
+publicintmul(int x, int y)
+        {
+return (x * y);
+        } }
+--------
+using System;
+usingSystem.Collections.Generic;
+usingSystem.Linq;
+usingSystem.Text;
+usingNUnit.Framework;
+using Leela64;
+namespace Test
+{
+    [TestFixture]
+publicclassClass1
+    {
+        [Test]
+publicvoidprs()
+        {
+Multiplication m1 = newMultiplication();
+Addition a1 = newAddition();
+Subtraction s1 = newSubtraction();
+Division d1 = newDivision();
+Assert.AreEqual(20, m1.mul(5, 4));
+Assert.AreEqual(1, s1.sub(8, 7));
+Assert.AreEqual(7, a1.add(3, 4));
+Assert.AreEqual(1, d1.div(5, 5));
+        }
+        [Test]
+publicvoid prs1()
+        {
+Multiplication m1 = newMultiplication();
+Addition a1 = newAddition();
+Subtraction s1 = newSubtraction();
+Division d1 = newDivision();
+Assert.AreEqual(10, m1.mul(2, 4));
+Assert.AreEqual(1, s1.sub(8, 7));
+Assert.AreEqual(7, a1.add(3, 4));
+Assert.AreEqual(1, d1.div(5, 5));
+        }}}
