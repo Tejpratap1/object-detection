@@ -1,0 +1,41 @@
+packagecom.vogella.JUnit.Basic;
+publicclass Addition {
+publicintaddNumbers(inta , intb)
+{
+		intsum=a+b;
+		returnsum;
+}
+}
+----
+packagecom.vogella.JUnit.Basic;
+importstaticorg.junit.Assert.*;
+importjava.util.Arrays;
+importjava.util.Collection; 
+importorg.junit.Test;
+importorg.junit.runner.RunWith;
+importorg.junit.runners.Parameterized;
+importorg.junit.runners.Parameterized.Parameters;
+@RunWith(Parameterized.class)
+publicclassAdditionTest
+{
+privateintexpected;
+privateintfirst;
+privateintsecond; 
+publicAdditionTest(intexpectedResult, intfirstNumber,
+intsecondNumber) {
+this.expected = expectedResult;
+this.first = firstNumber;
+this.second = secondNumber;
+    } 
+@Parameters
+publicstatic Collection<Integer[]>addedNumbers() {
+returnArrays.asList(new Integer[][] { { 10, 6, 4 }, { 6, 3, 3 },
+                { 20, 15, 5 }, { 13, 9, 4 },{2,1,1} });
+}	@Test
+	publicvoid test() 
+		  {
+			Addition add = newAddition();
+			System.out.println("Addition with parameters : " + first + " and "		                + second);
+assertEquals(expected,add.addNumbers(first, second));
+	}
+}
